@@ -5,8 +5,8 @@ function FooterCard() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    { src: "/footer/card1.png", alt: "Card1" },
-    { src: "/footer/card2.png", alt: "Card2" },
+    { src: "/footer/first-card.png", alt: "Card1" },
+    { src: "/footer/second-card.png", alt: "Card2" },
   ];
 
   const nextImage = () => {
@@ -34,7 +34,7 @@ function FooterCard() {
         <div className="hidden md:flex ">
           <div className="w-1/2 h-[430px]">
             <Image
-              src={`/footer/card1.png`}
+              src={`/footer/first-card.png`}
               alt="card1"
               width={800}
               height={600}
@@ -43,7 +43,7 @@ function FooterCard() {
           </div>
           <div className="w-1/2 h-[430px]">
             <Image
-              src={`/footer/card2.png`}
+              src={`/footer/second-card.png`}
               alt="card2"
               width={800}
               height={600}
