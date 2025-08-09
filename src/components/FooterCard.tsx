@@ -35,7 +35,7 @@ function FooterCard() {
           <div className="w-1/2 h-[430px]">
             <Image
               src={`/footer/card1.png`}
-              alt="Card1"
+              alt="card1"
               width={800}
               height={600}
               className="w-full h-full object-contain"
@@ -44,7 +44,7 @@ function FooterCard() {
           <div className="w-1/2 h-[430px]">
             <Image
               src={`/footer/card2.png`}
-              alt="Card2"
+              alt="card2"
               width={800}
               height={600}
               className="w-full h-full object-contain"
