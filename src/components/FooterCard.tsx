@@ -5,8 +5,8 @@ function FooterCard() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    { src: "/footer/Card1.png", alt: "Card1" },
-    { src: "/footer/Card2.png", alt: "Card2" },
+    { src: "/footer/card1.png", alt: "Card1" },
+    { src: "/footer/card2.png", alt: "Card2" },
   ];
 
   const nextImage = () => {
