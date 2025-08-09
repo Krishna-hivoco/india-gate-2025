@@ -31,7 +31,7 @@ function FooterCard() {
       {/* Image Section */}
       <div className="py-0 md:py-8 ">
         {/* Desktop: Equal 50% width with gap */}
-        <div className="hidden md:flex ">
+        <div className="hidden md:flex md:gap-5 ">
           <div className="w-1/2 h-[430px]">
             <Image
               src={`/footer/first-card.png`}
@@ -53,8 +53,8 @@ function FooterCard() {
         </div>
 
         {/* Mobile: Full screen single image with arrow navigation */}
-        <div className="md:hidden relative">
-          <div className="w-full h-[364px]">
+        <div className="md:hidden relative  ">
+          <div className="w-full pt-6">
             <Image
               src={images[currentImageIndex].src}
               alt={images[currentImageIndex].alt}
@@ -67,7 +67,7 @@ function FooterCard() {
           {/* Arrow button */}
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent ring-1 ring-[#6D4036] bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200"
             aria-label="Next image"
           >
             <svg
@@ -77,14 +77,14 @@ function FooterCard() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-gray-700"
+              className="text-[#6D4036]"
             >
               <polyline points="9,18 15,12 9,6"></polyline>
             </svg>
           </button>
 
           {/* Dots indicator */}
-          <div className="flex justify-center mt-4 gap-2">
+          <div className="flex justify-center mt-4 gap-2 pb-3">
             {images.map((_, index) => (
               <button
                 key={index}

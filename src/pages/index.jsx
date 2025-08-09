@@ -661,7 +661,7 @@ export default function Home() {
       // Add a small delay to ensure smooth transition
       setTimeout(() => {
         setIsLoading(false);
-      }, 2000);
+      }, 1400);
     };
 
     // Check if page is already loaded
@@ -757,7 +757,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
+    <div className="bg-[url('/common/mobile-bg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
       {/* Loading Popup */}
       {isLoading && (
         <div className="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
@@ -812,7 +812,7 @@ export default function Home() {
 
       {/* Main content section - exactly screen height */}
       <div
-        className={` md:h-screen overflow-auto transition-opacity duration-500 ${
+        className={` md:h-screen  transition-opacity duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -898,6 +898,7 @@ export default function Home() {
                     width={130}
                     height={200}
                     priority
+                    className=""
                   />
                 </div>
                 <div className="flex-1 flex items-center text-center flex-col gap-3 pr-4">
