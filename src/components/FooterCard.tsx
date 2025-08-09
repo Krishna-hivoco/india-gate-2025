@@ -84,7 +84,7 @@ function FooterCard() {
           </button>
 
           {/* Dots indicator */}
-          <div className="flex justify-center mt-4 gap-2 pb-4">
+          <div className="flex justify-center mt-4 gap-2 pb-5">
             {images.map((_, index) => (
               <button
                 key={index}

@@ -661,7 +661,7 @@ export default function Home() {
       // Add a small delay to ensure smooth transition
       setTimeout(() => {
         setIsLoading(false);
-      }, 1400);
+      }, 1200);
     };
 
     // Check if page is already loaded
