@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 function Footer() {
-  const icon = ["whatsapp", "Facebook", "Insta", "x", "youtube"];
+  const icon = ["whatsapp", "facebook", "insta", "x", "youtube"];
   return (
     <div className="py-4 px-4 md:px-16 bg-[rgba(109,64,54,0.5)]  w-full">
       <div className="flex justify-center items-center gap-6">
