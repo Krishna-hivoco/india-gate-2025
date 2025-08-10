@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function FooterCard() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -8,6 +8,17 @@ function FooterCard() {
     { src: "/footer/first-card.png", alt: "Card1" },
     { src: "/footer/second-card.png", alt: "Card2" },
   ];
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  }, 2000); // 600ms interval
+
+  // Cleanup interval on component unmount
+  return () => clearInterval(interval);
+}, [images.length]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
@@ -53,21 +64,33 @@ function FooterCard() {
         </div>
 
         {/* Mobile: Full screen single image with arrow navigation */}
-        <div className="md:hidden relative  ">
-          <div className="w-full pt-6">
-            <Image
-              src={images[currentImageIndex].src}
-              alt={images[currentImageIndex].alt}
-              width={800}
-              height={600}
-              className="w-full h-full object-contain"
-            />
+        <div className="md:hidden relative overflow-hidden">
+          <div className="w-full pt-6 relative">
+            {/* Container for all images */}
+            <div
+              className="flex transition-transform duration-500 ease-in-out gap-[2px]"
+              style={{
+                transform: `translateX(-${currentImageIndex * 100}%)`,
+              }}
+            >
+              {images.map((image, index) => (
+                <div key={index} className="w-full flex-shrink-0 min-w-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Arrow button */}
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent ring-1 ring-[#6D4036] bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent ring-1 ring-[#6D4036] bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200 z-10"
             aria-label="Next image"
           >
             <svg
