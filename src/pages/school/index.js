@@ -199,7 +199,7 @@ function Index() {
       }
 
       const data = await response.json();
-console.log("data",data)
+
       if (data?.school_id) {
         // Get the current base URL
         const baseUrl = window.location.origin;

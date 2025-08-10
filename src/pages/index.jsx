@@ -84,7 +84,7 @@ export default function Home() {
   // const shareData = {
   //   title: "#GrainsOfHope - 1 Share = 1 Meal",
   //   text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-  //   url: `http://localhost:3000/?share_id=${infoCurrentShareId?.share_id}`,
+  //   url: `https://indiagategrainsofhope.com/?share_id=${infoCurrentShareId?.share_id}`,
   // };
 
   // const handleShare = async () => {
@@ -143,7 +143,7 @@ export default function Home() {
   //   const shareData = {
   //     title: "#GrainsOfHope - 1 Share = 1 Meal",
   //     text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-  //     url: `http://localhost:3000/?share_id=${info?.share_id}`,
+  //     url: `https://indiagategrainsofhope.com/?share_id=${info?.share_id}`,
   //   };
 
   //   if (navigator.share) {
@@ -171,7 +171,7 @@ export default function Home() {
   //   const shareData = {
   //     title: "#GrainsOfHope - 1 Share = 1 Meal",
   //     text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-  //     url: `http://localhost:3000/?share_id=${info?.share_id}`,
+  //     url: `https://indiagategrainsofhope.com/?share_id=${info?.share_id}`,
   //   };
 
   //   const socialShares = {
@@ -217,7 +217,7 @@ const handleShare = async () => {
   const shareData = {
     title: "#GrainsOfHope - 1 Share = 1 Meal",
     text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-    url: `http://localhost:3000/?share_id=${actualShareId}`,
+    url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
   };
 
   if (navigator.share) {
@@ -250,22 +250,41 @@ const handleSocialShare = async (platform) => {
   const shareData = {
     title: "#GrainsOfHope - 1 Share = 1 Meal",
     text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-    url: `http://localhost:3000/?share_id=${actualShareId}`,
+    url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
   };
+
+  // const socialShares = {
+  //   whatsapp: `https://wa.me/?text=${encodeURIComponent(
+  //     `${shareData.text} ${shareData.url}`
+  //   )}`,
+  //   facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+  //     shareData.url
+  //   )}`,
+  //   twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  //     shareData.text
+  //   )}&url=${encodeURIComponent(shareData.url)}`,
+  //   linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+  //     shareData.url
+  //   )}`,
+  //   instagram: `https://www.instagram.com/`,
+  //   snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
+  //     shareData.url
+  //   )}`,
+  // };
 
   const socialShares = {
     whatsapp: `https://wa.me/?text=${encodeURIComponent(
-      `${shareData.text} ${shareData.url}`
+      `${shareData.text}\n${shareData.url}`
     )}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       shareData.url
-    )}`,
+    )}&quote=${encodeURIComponent(shareData.text)}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      shareData.text
-    )}&url=${encodeURIComponent(shareData.url)}`,
+      `${shareData.text}\n${shareData.url}`
+    )}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
       shareData.url
-    )}`,
+    )}&summary=${encodeURIComponent(shareData.text)}`,
     instagram: `https://www.instagram.com/`,
     snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
       shareData.url
