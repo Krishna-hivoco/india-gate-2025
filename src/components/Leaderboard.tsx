@@ -71,7 +71,7 @@ function LeaderboardCard({
         <>
           <span className="font-semibold">#{rank}</span>
           <span className="font-medium text-center flex-1 mx-4">{name}</span>
-          <span className="font-bold text-green-600">{shareCount}</span>
+          <span className="font-bold ">{shareCount}</span>
         </>
       )}
     </div>
@@ -138,7 +138,7 @@ function Leaderboard({ data, selectedView, loading, error }: LeaderboardProps) {
       </h1>
 
       {/* Header Row */}
-      <div className="md:px-11 px-4 py-3 flex justify-between items-center ring-1 rounded-full regular-text text-lg md:text-2xl bg-gray-100">
+      <div className="md:px-11 px-4 py-3 flex justify-between items-center ring-1 rounded-full regular-text text-lg md:text-2xl ">
         <strong>Rank</strong>
         <strong>{getHeaderText()}</strong>
         <strong>Share Count</strong>

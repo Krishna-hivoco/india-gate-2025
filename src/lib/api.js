@@ -73,3 +73,23 @@ export async function updatePlayVideo(deviceId, shareId) {
    }
  }
 
+ 
+export async function insertUTM(sources) {
+   try {
+     const res = await fetch(
+       `${BASE_URL}/log/utm_count`,
+       {
+         method: "POST",
+         headers: { "Content-Type": "application/json" },
+         body: JSON.stringify({ sources }),
+       }
+     );
+     if (!res.ok)
+       throw new Error(`Error inserting source: ${res.status}`);
+     return await res.json();
+   } catch (error) {
+     console.error("insertSSource Error:", error);
+     return null;
+   }
+ }
+

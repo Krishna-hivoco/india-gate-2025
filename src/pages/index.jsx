@@ -8,6 +8,7 @@ import {
   generateUniqueId,
   getMainStats,
   insertSchoolShare,
+  insertUTM,
   updatePlayVideo,
 } from "@/lib/api";
 import Header from "@/components/Header";
@@ -20,7 +21,8 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const searchParams = useSearchParams();
   const share_id = searchParams.get("share_id");
-   const [infoCurrentShareId, setinfoCurrentShareId] = useState(null);
+  const sources = searchParams.get("utm_source") || "direct";
+  const [infoCurrentShareId, setinfoCurrentShareId] = useState(null);
   // Loading effect
   useEffect(() => {
     const handleLoad = () => {
@@ -62,7 +64,9 @@ export default function Home() {
     };
   }, [infoCurrentShareId]);
 
- 
+  useEffect(() => {
+    insertUTM(sources);
+  }, [searchParams]);
   const [device_id, setdevice_id] = useState(null);
   useEffect(() => {
     const storedId = localStorage.getItem("device_id");
@@ -203,103 +207,103 @@ export default function Home() {
   //   setShowSharePopup(false);
   // };
 
-const handleShare = async () => {
-  // Generate share ID first
-  const info = await insertSchoolShare(device_id, share_id);
-  console.log("Share info received:", info); // Debug log
-  setinfoCurrentShareId(info);
+  const handleShare = async () => {
+    // Generate share ID first
+    const info = await insertSchoolShare(device_id, share_id);
+    console.log("Share info received:", info); // Debug log
+    setinfoCurrentShareId(info);
 
-  // Check if we have a valid share_id
-  const actualShareId =
-    info?.share_id || info?.id || info?.shareId || "default";
-  console.log("Using share_id:", actualShareId); // Debug log
+    // Check if we have a valid share_id
+    const actualShareId =
+      info?.share_id || info?.id || info?.shareId || "default";
+    console.log("Using share_id:", actualShareId); // Debug log
 
-  const shareData = {
-    title: "#GrainsOfHope - 1 Share = 1 Meal",
-    text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-    url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
-  };
+    const shareData = {
+      title: "#GrainsOfHope - 1 Share = 1 Meal",
+      text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
+      url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
+    };
 
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-      console.log("Content shared successfully via native share");
-    } catch (error) {
-      if (error.name !== "AbortError") {
-        console.log("Native share failed, showing popup");
-        setShowSharePopup(true);
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        console.log("Content shared successfully via native share");
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          console.log("Native share failed, showing popup");
+          setShowSharePopup(true);
+        }
       }
+    } else {
+      setShowSharePopup(true);
     }
-  } else {
-    setShowSharePopup(true);
-  }
-};
-
-const handleSocialShare = async (platform) => {
-  // Generate share ID first
-  const info = await insertSchoolShare(device_id, share_id);
-  console.log("Share info received:", info); // Debug log
-  setinfoCurrentShareId(info);
-
-  // Check if we have a valid share_id
-  const actualShareId =
-    info?.share_id || info?.id || info?.shareId || "default";
-  console.log("Using share_id:", actualShareId); // Debug log
-
-  // Create shareData with the actual share_id
-  const shareData = {
-    title: "#GrainsOfHope - 1 Share = 1 Meal",
-    text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-    url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
   };
 
-  // const socialShares = {
-  //   whatsapp: `https://wa.me/?text=${encodeURIComponent(
-  //     `${shareData.text} ${shareData.url}`
-  //   )}`,
-  //   facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-  //     shareData.url
-  //   )}`,
-  //   twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-  //     shareData.text
-  //   )}&url=${encodeURIComponent(shareData.url)}`,
-  //   linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-  //     shareData.url
-  //   )}`,
-  //   instagram: `https://www.instagram.com/`,
-  //   snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
-  //     shareData.url
-  //   )}`,
-  // };
+  const handleSocialShare = async (platform) => {
+    // Generate share ID first
+    const info = await insertSchoolShare(device_id, share_id);
+    console.log("Share info received:", info); // Debug log
+    setinfoCurrentShareId(info);
 
-  const socialShares = {
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(
-      `${shareData.text}\n${shareData.url}`
-    )}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      shareData.url
-    )}&quote=${encodeURIComponent(shareData.text)}`,
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `${shareData.text}\n${shareData.url}`
-    )}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-      shareData.url
-    )}&summary=${encodeURIComponent(shareData.text)}`,
-    instagram: `https://www.instagram.com/`,
-    snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
-      shareData.url
-    )}`,
+    // Check if we have a valid share_id
+    const actualShareId =
+      info?.share_id || info?.id || info?.shareId || "default";
+    console.log("Using share_id:", actualShareId); // Debug log
+
+    // Create shareData with the actual share_id
+    const shareData = {
+      title: "#GrainsOfHope - 1 Share = 1 Meal",
+      text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
+      url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
+    };
+
+    // const socialShares = {
+    //   whatsapp: `https://wa.me/?text=${encodeURIComponent(
+    //     `${shareData.text} ${shareData.url}`
+    //   )}`,
+    //   facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    //     shareData.url
+    //   )}`,
+    //   twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    //     shareData.text
+    //   )}&url=${encodeURIComponent(shareData.url)}`,
+    //   linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    //     shareData.url
+    //   )}`,
+    //   instagram: `https://www.instagram.com/`,
+    //   snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
+    //     shareData.url
+    //   )}`,
+    // };
+
+    const socialShares = {
+      whatsapp: `https://wa.me/?text=${encodeURIComponent(
+        `${shareData.text}\n${shareData.url}`
+      )}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        shareData.url
+      )}&quote=${encodeURIComponent(shareData.text)}`,
+      twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        `${shareData.text}\n${shareData.url}`
+      )}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+        shareData.url
+      )}&summary=${encodeURIComponent(shareData.text)}`,
+      instagram: `https://www.instagram.com/`,
+      snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
+        shareData.url
+      )}`,
+    };
+
+    if (platform === "instagram") {
+      navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+      alert("Link copied to clipboard! You can paste it in Instagram.");
+      window.open(socialShares[platform], "_blank");
+    } else {
+      window.open(socialShares[platform], "_blank");
+    }
+    setShowSharePopup(false);
   };
-
-  if (platform === "instagram") {
-    navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
-    alert("Link copied to clipboard! You can paste it in Instagram.");
-    window.open(socialShares[platform], "_blank");
-  } else {
-    window.open(socialShares[platform], "_blank");
-  }
-  setShowSharePopup(false);
-};
 
   const desktopOpts = {
     height: "350",
@@ -396,7 +400,7 @@ const handleSocialShare = async (platform) => {
               {/* AB Image - starts from left edge of screen */}
               <div className="absolute left-0 top-1/2 transform -translate-y-3/4 z-10">
                 <Image
-                  src={`/home/ab.png`}
+                  src={`/home/abshadow.png`}
                   alt={`ab`}
                   width={246}
                   height={387}
@@ -464,7 +468,7 @@ const handleSocialShare = async (platform) => {
               <div className="flex items-center gap-[2px]">
                 <div className="flex-shrink-0">
                   <Image
-                    src={`/home/ab.png`}
+                    src={`/home/abshadow.png`}
                     alt={`ab`}
                     width={145}
                     height={200}

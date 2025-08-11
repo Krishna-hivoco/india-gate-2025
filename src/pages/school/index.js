@@ -277,7 +277,7 @@ function Index() {
               {loadingSchools
                 ? "Loading schools..."
                 : !city
-                ? "Select city first"
+                ? "Select Your School"
                 : "Select Your School"}
             </option>
             {schools.map((schoolName, i) => (

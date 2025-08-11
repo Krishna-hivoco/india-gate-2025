@@ -278,12 +278,12 @@ function Reports() {
             <select
               value={selectedView}
               onChange={handleViewChange}
-              className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700 font-medium min-w-[120px]"
+              className="appearance-none bg-[#6D4036] border border-[#6D4036] rounded-lg px-4 py-2 pr-8 shadow-sm focus:outline-none  text-white focus:ring-2 focus:ring-gray-400 font-medium min-w-[120px]"
             >
               <option value="School">School</option>
               <option value="Employee">Employee</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#6D4036]">
               <svg
                 className="fill-current h-4 w-4"
                 xmlns="http://www.w3.org/2000/svg"
