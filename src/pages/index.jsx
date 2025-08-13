@@ -325,7 +325,7 @@ export default function Home() {
             {/* Mobile Layout */}
             <div className="md:hidden mx-auto h-full flex flex-col container  px-4   gap-4">
               {/* Top row - AB image and text content */}
-              <div className="flex items-center gap-[2px]   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
+              <div className="flex items-end-safe gap-[2px]   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
                 <div className="flex-shrink-0 overflow-hidden ">
                   <Image
                     src={`/home/ab.png`}
@@ -351,14 +351,14 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="flex text-center container w-full  flex-col">
+              <div className="flex text-center container  py-1 w-full  flex-col">
                 <strong className="bold-text text-center text-2xl w-full ">
                   1 SHARE = 1 MEAL
                 </strong>
                 <div className="flex justify-center items-center flex-row-reverse gap-1">
                   <div
                     onClick={handleShare}
-                    className="w-1/2 ring bg-[#6D4036] flex justify-center items-center h-16 rounded-full mt-2"
+                    className="w-1/2 ring bg-[#6D4036] flex justify-center items-center h-14 rounded-full mt-2"
                   >
                     <button className="cursor-pointer text-white text-2xl bold-text">
                       Share
@@ -372,11 +372,11 @@ export default function Home() {
                   </div>
 
                   <div
-                    onClick={handleShare}
-                    className="w-1/2 ring-1   text-[#6D4036] ring-[#6D4036] flex flex-col justify-center h-16 items-center gap-1 rounded-full mt-2"
+                   
+                    className="w-1/2 ring-1   text-[#6D4036] ring-[#6D4036] flex flex-col justify-center h-14 items-center  rounded-full mt-2"
                     style={{ backgroundColor: "rgba(109, 64, 54, 0.1)" }}
                   >
-                    <strong className=" text-4xl">
+                    <strong className=" text-3xl">
                       {" "}
                       {mainStats?.share_count ? mainStats?.share_count : 123405}
                     </strong>
