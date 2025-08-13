@@ -355,7 +355,7 @@ export default function Home() {
                 <strong className="bold-text text-center text-2xl w-full ">
                   1 SHARE = 1 MEAL
                 </strong>
-                <div className="flex justify-center items-center flex-row-reverse gap-1">
+                <div className="flex justify-center items-center flex-row-reverse gap-3">
                   <div
                     onClick={handleShare}
                     className="w-1/2 ring bg-[#6D4036] flex justify-center items-center h-14 rounded-full mt-2"
