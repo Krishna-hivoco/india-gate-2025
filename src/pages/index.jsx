@@ -189,6 +189,8 @@ export default function Home() {
     },
   };
 
+  
+
   return (
     <div className=" bg-[url('/common/mobilebg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
       {/* Loading Popup */}
