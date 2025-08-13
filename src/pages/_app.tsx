@@ -25,12 +25,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>
-          #GrainsOfHope | India Gate Basmati Rice – 1 Share = 1 Meal for a Child
+          #FreedomFromHunger | India Gate Basmati Rice – 1 Share = 1 Meal for a Child
           in Need
         </title>
         <meta
           name="description"
-          content="Join India Gate Basmati Rice's #GrainsOfHope campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
+          content="Join India Gate Basmati Rice's #FreedomFromHunger campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
         />
         <meta
           name="keywords"
@@ -42,11 +42,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="#GrainsOfHope | India Gate Basmati Rice – 1 Share = 1 Meal for a Child in Need"
+          content="#FreedomFromHunger | India Gate Basmati Rice – 1 Share = 1 Meal for a Child in Need"
         />
         <meta
           property="og:description"
-          content="Join India Gate Basmati Rice's #GrainsOfHope campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
+          content="Join India Gate Basmati Rice's #FreedomFromHunger campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
         />
         <meta
           property="og:image"
@@ -69,11 +69,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="#GrainsOfHope | India Gate Basmati Rice – 1 Share = 1 Meal for a Child in Need"
+          content="#FreedomFromHunger | India Gate Basmati Rice – 1 Share = 1 Meal for a Child in Need"
         />
         <meta
           name="twitter:description"
-          content="Join India Gate Basmati Rice's #GrainsOfHope campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
+          content="Join India Gate Basmati Rice's #FreedomFromHunger campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
         />
         <meta
           name="twitter:image"
