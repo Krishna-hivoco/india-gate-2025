@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Open Graph */}
+        {/* Open Graph - with full URLs and dimensions */}
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
@@ -48,10 +48,24 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Join India Gate Basmati Rice's #GrainsOfHope campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
         />
-        <meta property="og:image" content="/home/logo.png" />
+        <meta
+          property="og:image"
+          content={"https://indiagategrainsofhope.com/home/logo.png"}
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:image:alt"
+          content="GrainsOfHope Campaign - India Gate Basmati Rice"
+        />
+        <meta
+          property="og:url"
+          content={"https://indiagategrainsofhope.com"}
+        />
         <meta property="og:site_name" content="India Gate Basmati Rice" />
 
-        {/* Twitter */}
+        {/* Twitter Card - with full URLs */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -61,7 +75,18 @@ export default function App({ Component, pageProps }: AppProps) {
           name="twitter:description"
           content="Join India Gate Basmati Rice's #GrainsOfHope campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
         />
-        <meta name="twitter:image" content="/home/logo.png" />
+        <meta
+          name="twitter:image"
+          content={"https://indiagategrainsofhope.com/home/logo.png"}
+        />
+        <meta
+          name="twitter:image:alt"
+          content="GrainsOfHope Campaign - India Gate Basmati Rice"
+        />
+
+        {/* Additional meta for mobile */}
+        <meta property="og:locale" content="en_US" />
+        <meta name="format-detection" content="telephone=no" />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
