@@ -85,129 +85,8 @@ export default function Home() {
     await updatePlayVideo(device_id, share_id);
   };
 
-  // const shareData = {
-  //   title: "#GrainsOfHope - 1 Share = 1 Meal",
-  //   text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-  //   url: `https://indiagategrainsofhope.com/?share_id=${infoCurrentShareId?.share_id}`,
-  // };
-
-  // const handleShare = async () => {
-  //   if (navigator.share) {
-  //     try {
-  //       await navigator.share(shareData);
-  //       console.log("Content shared successfully via native share");
-  //     } catch (error) {
-  //       if (error.name !== "AbortError") {
-  //         console.log("Native share failed, showing popup");
-  //         setShowSharePopup(true);
-  //       }
-  //     }
-  //   } else {
-  //     setShowSharePopup(true);
-  //   }
-  // };
-
-  // const socialShares = {
-  //   whatsapp: `https://wa.me/?text=${encodeURIComponent(
-  //     `${shareData.text} ${shareData.url}`
-  //   )}`,
-  //   facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-  //     shareData.url
-  //   )}`,
-  //   twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-  //     shareData.text
-  //   )}&url=${encodeURIComponent(shareData.url)}`,
-  //   linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-  //     shareData.url
-  //   )}`,
-  //   instagram: `https://www.instagram.com/`,
-  //   snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
-  //     shareData.url
-  //   )}`,
-  // };
-
-  // const handleSocialShare = async (platform) => {
-  //   const info = await insertSchoolShare(device_id, share_id);
-  //   setinfoCurrentShareId(info);
-  //   if (platform === "instagram") {
-  //     navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
-  //     alert("Link copied to clipboard! You can paste it in Instagram.");
-  //     window.open(socialShares[platform], "_blank");
-  //   } else {
-  //     window.open(socialShares[platform], "_blank");
-  //   }
-  //   setShowSharePopup(false);
-  // };
-
-  // const handleShare = async () => {
-  //   // Generate share ID first
-  //   const info = await insertSchoolShare(device_id, share_id);
-  //   setinfoCurrentShareId(info);
-
-  //   const shareData = {
-  //     title: "#GrainsOfHope - 1 Share = 1 Meal",
-  //     text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-  //     url: `https://indiagategrainsofhope.com/?share_id=${info?.share_id}`,
-  //   };
-
-  //   if (navigator.share) {
-  //     try {
-  //       await navigator.share(shareData);
-  //       console.log("Content shared successfully via native share");
-  //     } catch (error) {
-  //       if (error.name !== "AbortError") {
-  //         console.log("Native share failed, showing popup");
-  //         setShowSharePopup(true);
-  //       }
-  //     }
-  //   } else {
-  //     setShowSharePopup(true);
-  //   }
-  // };
-
-  // const handleSocialShare = async (platform) => {
-  //   // Generate share ID first
-  //   const info = await insertSchoolShare(device_id, share_id);
-  //   console.log("info",info)
-  //   setinfoCurrentShareId(info);
-
-  //   // Create shareData with the actual share_id
-  //   const shareData = {
-  //     title: "#GrainsOfHope - 1 Share = 1 Meal",
-  //     text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
-  //     url: `https://indiagategrainsofhope.com/?share_id=${info?.share_id}`,
-  //   };
-
-  //   const socialShares = {
-  //     whatsapp: `https://wa.me/?text=${encodeURIComponent(
-  //       `${shareData.text} ${shareData.url}`
-  //     )}`,
-  //     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-  //       shareData.url
-  //     )}`,
-  //     twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-  //       shareData.text
-  //     )}&url=${encodeURIComponent(shareData.url)}`,
-  //     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-  //       shareData.url
-  //     )}`,
-  //     instagram: `https://www.instagram.com/`,
-  //     snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
-  //       shareData.url
-  //     )}`,
-  //   };
-
-  //   if (platform === "instagram") {
-  //     navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
-  //     alert("Link copied to clipboard! You can paste it in Instagram.");
-  //     window.open(socialShares[platform], "_blank");
-  //   } else {
-  //     window.open(socialShares[platform], "_blank");
-  //   }
-  //   setShowSharePopup(false);
-  // };
-
   const handleShare = async () => {
+    window.gtag_report_conversion();
     // Generate share ID first
     const info = await insertSchoolShare(device_id, share_id);
     console.log("Share info received:", info); // Debug log
@@ -256,25 +135,6 @@ export default function Home() {
       text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
       url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
     };
-
-    // const socialShares = {
-    //   whatsapp: `https://wa.me/?text=${encodeURIComponent(
-    //     `${shareData.text} ${shareData.url}`
-    //   )}`,
-    //   facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    //     shareData.url
-    //   )}`,
-    //   twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    //     shareData.text
-    //   )}&url=${encodeURIComponent(shareData.url)}`,
-    //   linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-    //     shareData.url
-    //   )}`,
-    //   instagram: `https://www.instagram.com/`,
-    //   snapchat: `https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(
-    //     shareData.url
-    //   )}`,
-    // };
 
     const socialShares = {
       whatsapp: `https://wa.me/?text=${encodeURIComponent(
@@ -333,7 +193,7 @@ export default function Home() {
     <div className=" bg-[url('/common/mobilebg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
       {/* Loading Popup */}
       {isLoading && (
-        <div className="fixed inset-0 bg-white z-[9999] flex items-center justify-center bg-[url('/common/mobilebg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
+        <div className="fixed inset-0  z-[9999] flex items-center justify-center bg-[url('/common/mobilebg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
           <div className="text-center">
             {/* Loading Logo */}
             <div className="mb-8">
@@ -463,20 +323,20 @@ export default function Home() {
             </div>
 
             {/* Mobile Layout */}
-            <div className="md:hidden mx-auto h-full flex flex-col  gap-4">
+            <div className="md:hidden mx-auto h-full flex flex-col container  px-4   gap-4">
               {/* Top row - AB image and text content */}
-              <div className="flex items-center gap-[2px]">
-                <div className="flex-shrink-0">
+              <div className="flex items-center gap-[2px]   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
+                <div className="flex-shrink-0 overflow-hidden ">
                   <Image
-                    src={`/home/abshadow.png`}
+                    src={`/home/ab.png`}
                     alt={`ab`}
                     width={145}
                     height={200}
                     priority
-                    className=""
+                    className="overflow-hidden rounded-[18px]"
                   />
                 </div>
-                <div className="flex-1 flex items-center text-center flex-col gap-3 pr-4">
+                <div className="flex-1 flex items-center text-center flex-col gap-3 pb-2">
                   <Image
                     src={`/home/logo.png`}
                     alt={`logo`}
@@ -484,38 +344,51 @@ export default function Home() {
                     height={155}
                     priority
                   />
-                  <p className="text-sm regular-text">
+                  <p className="text-sm regular-text text-white">
                     Through <b> #GrainsOfHope, </b> Share this initiative and
                     let's put a full plate of food in front of a child who needs
                     it.
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center">
-                <strong className="bold-text text-2xl">1 SHARE = 1 MEAL</strong>
-                <div
-                  onClick={handleShare}
-                  className="w-60 ring bg-[#6D4036] flex justify-center items-center py-3 gap-1 rounded-full mt-2"
-                >
-                  <button className="cursor-pointer text-white text-2xl bold-text">
-                    Share
-                  </button>
-                  <Image
-                    src={`/home/share.svg`}
-                    alt={`share`}
-                    width={24}
-                    height={124}
-                  />
-                </div>
-                <strong className="mt-2 text-4xl">
-                  {" "}
-                  {mainStats?.share_count ? mainStats?.share_count : 123405}
+              <div className="flex text-center container w-full  flex-col">
+                <strong className="bold-text text-center text-2xl w-full ">
+                  1 SHARE = 1 MEAL
                 </strong>
-                <span className="text-xs regular-text">Shares & counting</span>
+                <div className="flex justify-center items-center flex-row-reverse gap-1">
+                  <div
+                    onClick={handleShare}
+                    className="w-1/2 ring bg-[#6D4036] flex justify-center items-center h-16 rounded-full mt-2"
+                  >
+                    <button className="cursor-pointer text-white text-2xl bold-text">
+                      Share
+                    </button>
+                    <Image
+                      src={`/home/share.svg`}
+                      alt={`share`}
+                      width={24}
+                      height={124}
+                    />
+                  </div>
+
+                  <div
+                    onClick={handleShare}
+                    className="w-1/2 ring-1   text-[#6D4036] ring-[#6D4036] flex flex-col justify-center h-16 items-center gap-1 rounded-full mt-2"
+                    style={{ backgroundColor: "rgba(109, 64, 54, 0.1)" }}
+                  >
+                    <strong className=" text-4xl">
+                      {" "}
+                      {mainStats?.share_count ? mainStats?.share_count : 123405}
+                    </strong>
+                    <span className="text-xs regular-text">
+                      Shares & counting
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* Bottom - Video with rounded corners */}
-              <div className="flex-shrink-0 pb-4 px-4">
+              <div className="flex-shrink-0 pb-4 ">
                 <div className="rounded-2xl overflow-hidden shadow-lg w-full">
                   <div
                     className="relative w-full"
