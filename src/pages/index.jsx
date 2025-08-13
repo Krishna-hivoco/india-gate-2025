@@ -86,7 +86,13 @@ export default function Home() {
   };
 
   const handleShare = async () => {
-    window.gtag_report_conversion();
+   
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Share");
+    }
+    if (typeof window !== "undefined") {
+      window.gtag_report_conversion();
+    }
     // Generate share ID first
     const info = await insertSchoolShare(device_id, share_id);
     console.log("Share info received:", info); // Debug log
