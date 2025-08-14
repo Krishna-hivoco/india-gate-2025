@@ -25,52 +25,70 @@ function Header() {
   }, [showMobileMenu]);
 
   return (
-    <div className="flex justify-between text-2xl items-start md:items-center px-4 lg:px-16 py-6 pb-3 md:py-6 regular-text">
+    <div className=" text-2xl  px-4 lg:px-16 py-4 pb-4 md:py-6  regular-text">
       {/* Logo */}
-      <Image
-        src={`/common/india.png`}
-        alt={`India Gate logo`}
-        width={72}
-        height={100}
-        className="w-12 h-17 md:w-[72px] md:h-[100px] cursor-pointer"
-      />
+      <div className="flex  justify-end ">
+        <div className="">
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex gap-16 items-center">
+            {menu.map((item, id) => (
+              <span
+                key={id}
+                className="cursor-pointer hover:text-red-600 font-medium"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
 
-      {/* Desktop Menu */}
-      <div className="hidden lg:flex gap-16 items-center">
-        {menu.map((item, id) => (
-          <span
-            key={id}
-            className="cursor-pointer hover:text-red-600 font-medium"
-          >
-            {item}
-          </span>
-        ))}
-      </div>
+          {/* Mobile Menu Icon */}
+          <div className="lg:hidden flex items-center">
+            <button onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              <span className="text-3xl font-bold">⋮</span>
+            </button>
+          </div>
 
-      {/* Mobile Menu Icon */}
-      <div className="lg:hidden flex items-center">
-        <button onClick={() => setShowMobileMenu(!showMobileMenu)}>
-          <span className="text-3xl font-bold">⋮</span>
-        </button>
-      </div>
-
-      {/* Mobile dropdown menu */}
-      {showMobileMenu && (
-        <div
-          ref={menuRef}
-          className="absolute top-20 right-4 text-xl bg-white shadow-md rounded-md p-4 flex flex-col gap-2 lg:hidden z-50"
-        >
-          {menu.map((item, id) => (
-            <span
-              key={id}
-              onClick={() => setShowMobileMenu(false)}
-              className="cursor-pointer hover:text-red-600 font-medium"
+          {/* Mobile dropdown menu */}
+          {showMobileMenu && (
+            <div
+              ref={menuRef}
+              className="absolute top-20 right-4 text-xl bg-white shadow-md rounded-md p-4 flex flex-col gap-2 lg:hidden z-50"
             >
-              {item}
-            </span>
-          ))}
+              {menu.map((item, id) => (
+                <span
+                  key={id}
+                  onClick={() => setShowMobileMenu(false)}
+                  className="cursor-pointer hover:text-red-600 font-medium"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
+      <div className=" flex flex-col  items-center  -mt-5">
+        <div className="flex">
+          {" "}
+          <Image
+            src={`/common/india.png`}
+            alt={`India Gate logo`}
+            width={65}
+            height={90}
+            className="cursor-pointer"
+          />
+          <Image
+            src={`/home/logo.png`}
+            alt={`India Gate logo`}
+            width={85}
+            height={85}
+            className=" cursor-pointer"
+          />
+        </div>
+        <p className="regular-text text-xs md:text-base">
+          An initiative by India Gate for #FreedomFromHunger
+        </p>
+      </div>
     </div>
   );
 }

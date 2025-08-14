@@ -288,9 +288,12 @@ export default function Home() {
                     priority
                   />
                   <p className="text-lg md:text-xl regular-text">
-                    Through <b> #GrainsOfHope,</b> Share this initiative and
-                    let's put a full plate of food in front of a child who needs
-                    it.
+                    At India Gate, through our Grains of Hope initiative, we
+                    proudly fill many plates every day — but we aim to reach
+                    more hungry children. For every share of this video, we’ll
+                    provide one meal to a child in need. Your simple act can
+                    spark change and bring us closer to a future where every
+                    child enjoys #FreedomFromHunger.
                   </p>
                 </div>
 
@@ -298,7 +301,7 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
-                      videoId="LB8Xp9DKRCQ"
+                      videoId="nqvR6NZ9bzo"
                       opts={desktopOpts}
                       onPlay={handleVideoPlay}
                       onPause={(event) => console.log("Video paused")}
@@ -333,7 +336,7 @@ export default function Home() {
             {/* Mobile Layout */}
             <div className="md:hidden mx-auto h-full flex flex-col container  px-4   gap-4">
               {/* Top row - AB image and text content */}
-              <div className="flex items-end-safe gap-[2px]   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
+              <div className="flex  gap-[2px] items-center   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
                 <div className="flex-shrink-0 overflow-hidden ">
                   <Image
                     src={`/home/ab.png`}
@@ -344,18 +347,21 @@ export default function Home() {
                     className="overflow-hidden rounded-[18px]"
                   />
                 </div>
-                <div className="flex-1 flex items-center text-center flex-col gap-3 pb-2">
-                  <Image
+                <div className="flex-1 flex items-center   text-center flex-col gap-3 pb-2">
+                  {/* <Image
                     src={`/home/logo.png`}
                     alt={`logo`}
                     width={150}
                     height={155}
                     priority
-                  />
-                  <p className="text-sm regular-text text-white">
-                    Through <b> #GrainsOfHope, </b> Share this initiative and
-                    let's put a full plate of food in front of a child who needs
-                    it.
+                  /> */}
+                  <p className="text-sm regular-text text-white text-left ">
+                    At India Gate, through our Grains of Hope initiative, we
+                    proudly fill many plates every day — but we aim to reach
+                    more hungry children. For every share of this video, we’ll
+                    provide one meal to a child in need. Your simple act can
+                    spark change and bring us closer to a future where every
+                    child enjoys #FreedomFromHunger.
                   </p>
                 </div>
               </div>
@@ -380,7 +386,6 @@ export default function Home() {
                   </div>
 
                   <div
-                   
                     className="w-1/2 ring-1   text-[#6D4036] ring-[#6D4036] flex flex-col justify-center h-14 items-center  rounded-full mt-2"
                     style={{ backgroundColor: "rgba(109, 64, 54, 0.1)" }}
                   >
@@ -404,7 +409,7 @@ export default function Home() {
                   >
                     <div className="absolute inset-0">
                       <YouTube
-                        videoId="LB8Xp9DKRCQ"
+                        videoId="nqvR6NZ9bzo"
                         opts={mobileOpts}
                         onPlay={handleVideoPlay}
                         onPause={(event) => console.log("Video paused")}

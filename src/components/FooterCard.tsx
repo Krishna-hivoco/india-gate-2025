@@ -5,20 +5,20 @@ function FooterCard() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    { src: "/footer/first-card.png", alt: "Card1" },
-    { src: "/footer/second-card.png", alt: "Card2" },
+    { src: "/footer/1.png", alt: "Card1" },
+    { src: "/footer/2.png", alt: "Card2" },
   ];
 
-useEffect(() => {
-  const interval = setInterval(() => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  }, 2000); // 600ms interval
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // 600ms interval
 
-  // Cleanup interval on component unmount
-  return () => clearInterval(interval);
-}, [images.length]);
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
@@ -45,7 +45,7 @@ useEffect(() => {
         <div className="hidden md:flex md:gap-5 ">
           <div className="w-1/2 h-[430px]">
             <Image
-              src={`/footer/first-card.png`}
+              src={`/footer/1.png`}
               alt="card1"
               width={800}
               height={600}
@@ -54,7 +54,7 @@ useEffect(() => {
           </div>
           <div className="w-1/2 h-[430px]">
             <Image
-              src={`/footer/second-card.png`}
+              src={`/footer/2.png`}
               alt="card2"
               width={800}
               height={600}
