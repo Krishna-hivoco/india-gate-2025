@@ -37,7 +37,7 @@ function FooterCard() {
         <div className="flex flex-col ">
           <h3 className=" bold-text text-xl md:text-3xl ">The Gap Between</h3>
           <h2 className=" bold-text text-3xl md:text-4xl -mt-1.5 ">
-            The Gap We Must Fill
+            Hunger & Hope
           </h2>
         </div>
       </div>
