@@ -52,7 +52,7 @@ function FooterCard() {
               alt="card1"
               width={800}
               height={600}
-              className="w-full h-full object-contain rounded-2xl"
+              className="w-full h-full object-cover rounded-2xl  "
             />
           </div>
           <div className="w-1/2 h-[430px]">
@@ -61,7 +61,7 @@ function FooterCard() {
               alt="card2"
               width={800}
               height={600}
-              className="w-full h-full object-contain rounded-2xl"
+              className="w-full h-full object-cover rounded-2xl "
             />
           </div>
         </div>
@@ -77,7 +77,7 @@ function FooterCard() {
               }}
             >
               {images.map((image, index) => (
-                <div key={index} className="w-full flex-shrink-0 min-w-full">
+                <div key={index} className="w-full flex-shrink-0 min-w-full ">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -128,7 +128,7 @@ function FooterCard() {
       </div>
 
       {/* Footer Text */}
-      <h3 className="text-center  text-xl md:text-2xl regular-text">
+      <h3 className="text-center max-w-4xl mx-auto  text-xl md:text-2xl regular-text">
         Watch. Share. Support <br />— because hunger should never win. Through
         our Grains of Hope initiative, we nourish underprivileged children so
         they can learn, grow, and dream. Together, let’s give them not just a

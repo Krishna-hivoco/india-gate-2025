@@ -27,8 +27,16 @@ function Header() {
   return (
     <div className=" text-2xl  px-4 lg:px-16 py-4 pb-4 md:py-6  regular-text">
       {/* Logo */}
-      <div className="flex  justify-end ">
-        <div className="">
+
+      <div className=" flex md:justify-between justify-end -mt-3">
+        <Image
+          src={`/common/india.png`}
+          alt={`India Gate logo`}
+          width={65}
+          height={90}
+          className="cursor-pointer hidden md:block"
+        />
+        <div className="flex  justify-end">
           {/* Desktop Menu */}
           <div className="hidden lg:flex gap-16 items-center">
             {menu.map((item, id) => (
@@ -67,7 +75,7 @@ function Header() {
           )}
         </div>
       </div>
-      <div className=" flex flex-col  items-center  -mt-5">
+      <div className=" flex flex-col  items-center  -mt-5 md:-mt-10">
         <div className="flex">
           {" "}
           <Image
@@ -75,17 +83,17 @@ function Header() {
             alt={`India Gate logo`}
             width={65}
             height={90}
-            className="cursor-pointer"
+            className="cursor-pointer md:hidden block"
           />
           <Image
             src={`/home/logo.png`}
             alt={`India Gate logo`}
             width={85}
             height={85}
-            className=" cursor-pointer"
+            className=" cursor-pointer "
           />
         </div>
-        <p className="regular-text text-xs md:text-base">
+        <p className="regular-text text-xs md:text-base md:hidden block">
           An initiative by India Gate for #FreedomFromHunger
         </p>
       </div>

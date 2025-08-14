@@ -29,16 +29,17 @@ export default function Home() {
       // Add a small delay to ensure smooth transition
       setTimeout(() => {
         setIsLoading(false);
-      }, 1200);
+      }, 1000);
     };
+    handleLoad()
 
     // Check if page is already loaded
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    // if (document.readyState === "complete") {
+    //   handleLoad();
+    // } else {
+    //   window.addEventListener("load", handleLoad);
+    //   return () => window.removeEventListener("load", handleLoad);
+    // }
   }, []);
 
   const [mainStats, setMainStats] = useState(null);
@@ -86,7 +87,6 @@ export default function Home() {
   };
 
   const handleShare = async () => {
-   
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("track", "Share");
     }
@@ -173,7 +173,7 @@ export default function Home() {
 
   const desktopOpts = {
     height: "350",
-    width: "720",
+    width: "650",
     playerVars: {
       autoplay: 0,
       controls: 1,
@@ -194,8 +194,6 @@ export default function Home() {
       modestbranding: 1,
     },
   };
-
-  
 
   return (
     <div className=" bg-[url('/common/mobilebg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
@@ -262,42 +260,32 @@ export default function Home() {
             <Header />
           </header>
 
-          <section className="flex-1 flex items-center relative">
-            {/* Desktop Layout */}
-            <div className="hidden lg:block">
-              {/* AB Image - starts from left edge of screen */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-3/4 z-10">
-                <Image
-                  src={`/home/abshadow.png`}
-                  alt={`ab`}
-                  width={246}
-                  height={387}
-                  priority
-                />
-              </div>
-
-              {/* Container for centered content and video */}
-              <div className="container mx-auto h-full gap-6 flex items-center justify-between px-4">
-                {/* Left content area - accounting for AB image */}
-                <div className="flex-1 max-w-md ml-64 flex items-center text-center flex-col gap-5">
+          <section className="flex-1  ">
+            {/* <div className="hidden lg:block">
+              
+              <div className="container mx-auto h-full gap-6 flex items-center justify-between px-16  ">
+            
+                <div className="flex-1 flex  bg-[#682E21] h-[350px] gap-10  rounded-[18px] items-end pr-10">
                   <Image
-                    src={`/home/logo.png`}
-                    alt={`logo`}
-                    width={223}
-                    height={230}
+                    src={`/home/ab.png`}
+                    alt={`ab`}
+                    width={200}
+                    height={364}
                     priority
                   />
-                  <p className="text-lg md:text-xl regular-text">
-                    At India Gate, through our Grains of Hope initiative, we
-                    proudly fill many plates every day — but we aim to reach
-                    more hungry children. For every share of this video, we’ll
-                    provide one meal to a child in need. Your simple act can
-                    spark change and bring us closer to a future where every
-                    child enjoys #FreedomFromHunger.
-                  </p>
+                  <div className=" flex items-center h-full">
+                    <p className="text-lg md:text-xl regular-text text-white">
+                      At India Gate, through our Grains of Hope initiative, we
+                      proudly fill many plates every day — but we aim to reach
+                      more hungry children. For every share of this video, we’ll
+                      provide one meal to a child in need. Your simple act can
+                      spark change and bring us closer to a future where every
+                      child enjoys #FreedomFromHunger.
+                    </p>
+                  </div>
                 </div>
 
-                {/* Right side - Video with rounded corners */}
+               
                 <div className="flex-shrink-0">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
@@ -310,26 +298,111 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center mt-3">
-                <strong className="bold-text text-2xl">1 SHARE = 1 MEAL</strong>
-                <div
-                  onClick={handleShare}
-                  className="w-60 ring bg-[#6D4036] flex justify-center items-center py-3 gap-1 rounded-full mt-2"
-                >
-                  <button className="cursor-pointer text-white text-2xl bold-text">
-                    Share
-                  </button>
+             
+
+              <div className="flex text-center container  py-1 w-md mx-auto  mt-5  flex-col">
+                <strong className="bold-text text-center text-2xl w-full ">
+                  1 SHARE = 1 MEAL
+                </strong>
+                <div className="flex justify-center items-center flex-row-reverse gap-3">
+                  <div
+                    onClick={handleShare}
+                    className="w-1/2 ring bg-[#6D4036] flex justify-center items-center h-14 rounded-full mt-2"
+                  >
+                    <button className="cursor-pointer text-white text-2xl bold-text">
+                      Share
+                    </button>
+                    <Image
+                      src={`/home/share.svg`}
+                      alt={`share`}
+                      width={24}
+                      height={124}
+                    />
+                  </div>
+
+                  <div
+                    className="w-1/2 ring-1   text-[#6D4036] ring-[#6D4036] flex flex-col justify-center h-14 items-center  rounded-full mt-2"
+                    style={{ backgroundColor: "rgba(109, 64, 54, 0.1)" }}
+                  >
+                    <strong className=" text-3xl">
+                      {" "}
+                      {mainStats?.share_count ? mainStats?.share_count : 123405}
+                    </strong>
+                    <span className="text-xs regular-text">
+                      Shares & counting
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+
+            <div className=" w-[1200px] mx-auto hidden lg:block">
+              <div className=" bg-[#682E21]  rounded-[18px] flex justify-center gap-10 pr-10 ">
+                <div className=" flex items-end">
                   <Image
-                    src={`/home/share.svg`}
-                    alt={`share`}
-                    width={24}
-                    height={124}
+                    src={`/home/ab.png`}
+                    alt={`ab`}
+                    width={263}
+                    height={413}
+                    priority
+                    className="overflow-hidden rounded-[18px]"
                   />
                 </div>
-                <strong className="mt-1 text-4xl">
-                  {mainStats?.share_count ? mainStats?.share_count : 123405}
-                </strong>
-                <span className="text-xs regular-text">Shares & counting</span>
+                <div className="flex-shrink-0 py-10">
+                  <div className="rounded-2xl overflow-hidden shadow-lg">
+                    <YouTube
+                      videoId="nqvR6NZ9bzo"
+                      opts={desktopOpts}
+                      onPlay={handleVideoPlay}
+                      onPause={(event) => console.log("Video paused")}
+                      onEnd={(event) => console.log("Video ended")}
+                    />
+                  </div>
+                  <div className="flex text-center container  py-1 w-md mx-auto  mt-5  flex-col">
+                    <div className="flex justify-center items-center flex-row-reverse gap-3">
+                      <div
+                        onClick={handleShare}
+                        className="w-1/2 ring bg-white text-[#6D4036] flex justify-center items-center h-14 rounded-full mt-2 gap-2"
+                      >
+                        <button className="cursor-pointer  text-3xl bold-text">
+                          Share
+                        </button>
+                        <Image
+                          src={`/home/share-red.svg`}
+                          alt={`share`}
+                          width={22}
+                          height={22}
+                          className=""
+                        />
+                      </div>
+
+                      <div className="w-1/2 ring-1   text-white ring-white flex flex-col justify-center h-14 items-center  rounded-full mt-2">
+                        <strong className=" text-3xl">
+                          {" "}
+                          {mainStats?.share_count
+                            ? mainStats?.share_count
+                            : 123405}
+                        </strong>
+                        <span className="text-xs regular-text">
+                          Shares & counting
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-48 py-10">
+                  <strong className="bold-text  text-2xl text-white  ">
+                    1 SHARE = 1 MEAL
+                  </strong>
+                  <p className="text-lg md:text-xl regular-text text-white">
+                    At India Gate, through our Grains of Hope initiative, we
+                    proudly fill many plates every day — but we aim to reach
+                    more hungry children. For every share of this video, we’ll
+                    provide one meal to a child in need. Your simple act can
+                    spark change and bring us closer to a future where every
+                    child enjoys #FreedomFromHunger.
+                  </p>
+                </div>
               </div>
             </div>
 
