@@ -52,7 +52,7 @@ function FooterCard() {
               alt="card1"
               width={800}
               height={600}
-              className="w-full h-full object-cover rounded-2xl  "
+              className="w-full h-full object-contain rounded-2xl  "
             />
           </div>
           <div className="w-1/2 h-[430px]">
@@ -61,7 +61,7 @@ function FooterCard() {
               alt="card2"
               width={800}
               height={600}
-              className="w-full h-full object-cover rounded-2xl "
+              className="w-full h-full object-contain rounded-2xl "
             />
           </div>
         </div>
