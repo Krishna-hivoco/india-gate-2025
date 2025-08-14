@@ -342,13 +342,13 @@ export default function Home() {
                   <Image
                     src={`/home/ab.png`}
                     alt={`ab`}
-                    width={263}
-                    height={413}
+                    width={450}
+                    height={400}
                     priority
-                    className="overflow-hidden rounded-[18px]"
+                    className="overflow-hidden h-[400px]   rounded-[18px]"
                   />
                 </div>
-                <div className="flex-shrink-0 py-10">
+                <div className="flex-shrink-0 py-7">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
                       videoId="nqvR6NZ9bzo"
@@ -390,7 +390,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="w-[263px] py-10">
+                <div className="w-[400px] py-7">
                   <strong className="bold-text  text-2xl text-white  ">
                     1 SHARE = 1 MEAL
                   </strong>
