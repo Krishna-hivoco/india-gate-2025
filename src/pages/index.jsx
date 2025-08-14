@@ -104,8 +104,8 @@ export default function Home() {
     console.log("Using share_id:", actualShareId); // Debug log
 
     const shareData = {
-      title: "#GrainsOfHope - 1 Share = 1 Meal",
-      text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
+      title: "#FreedomFromHunger - 1 Share = 1 Meal",
+      text: "Through GrainsOfHope initiative, every share of this video provides a meal to a child in need. Be the reason a child enjoys a full meal today.",
       url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
     };
 
@@ -137,8 +137,8 @@ export default function Home() {
 
     // Create shareData with the actual share_id
     const shareData = {
-      title: "#GrainsOfHope - 1 Share = 1 Meal",
-      text: "Through #GrainsOfHope, Share this initiative and let's put a full plate of food in front of a child who needs it.",
+      title: "#FreedomFromHunger - 1 Share = 1 Meal",
+      text: "Through #FreedomFromHunger, Share this initiative and let's put a full plate of food in front of a child who needs it.",
       url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
     };
 
@@ -264,7 +264,7 @@ export default function Home() {
 
           <section className="flex-1 flex items-center relative">
             {/* Desktop Layout */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               {/* AB Image - starts from left edge of screen */}
               <div className="absolute left-0 top-1/2 transform -translate-y-3/4 z-10">
                 <Image
@@ -334,7 +334,7 @@ export default function Home() {
             </div>
 
             {/* Mobile Layout */}
-            <div className="md:hidden mx-auto h-full flex flex-col container  px-4   gap-4">
+            <div className="lg:hidden mx-auto h-full flex flex-col container  px-4   gap-4">
               {/* Top row - AB image and text content */}
               <div className="flex  gap-[2px] items-center   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
                 <div className="flex-shrink-0 overflow-hidden ">

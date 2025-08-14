@@ -30,13 +30,16 @@ function FooterCard() {
         <Image
           src={`/footer/analytics.svg`}
           alt="analytics icon"
-          width={45}
-          height={45}
-          className="w-8 h-8 md:w-[45px] md:h-[45px]"
+          width={50}
+          height={50}
+          className="w-11 h-11 md:w-[50px] md:h-[50px] "
         />
-        <h2 className=" bold-text text-4xl md:text-5xl">
-          The Gap We Must Fill
-        </h2>
+        <div className="flex flex-col ">
+          <h3 className=" bold-text text-xl md:text-3xl ">The Gap Between</h3>
+          <h2 className=" bold-text text-3xl md:text-4xl -mt-1.5 ">
+            The Gap We Must Fill
+          </h2>
+        </div>
       </div>
 
       {/* Image Section */}
@@ -49,7 +52,7 @@ function FooterCard() {
               alt="card1"
               width={800}
               height={600}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-2xl"
             />
           </div>
           <div className="w-1/2 h-[430px]">
@@ -58,7 +61,7 @@ function FooterCard() {
               alt="card2"
               width={800}
               height={600}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-2xl"
             />
           </div>
         </div>
@@ -80,7 +83,7 @@ function FooterCard() {
                     alt={image.alt}
                     width={800}
                     height={600}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain rounded-2xl"
                   />
                 </div>
               ))}
@@ -126,8 +129,10 @@ function FooterCard() {
 
       {/* Footer Text */}
       <h3 className="text-center  text-xl md:text-2xl regular-text">
-        Watch. Share. Make a difference—because hunger should never win.
-        <br /> <b>Let's put meals on tables, together.</b>
+        Watch. Share. Support <br />— because hunger should never win. Through
+        our Grains of Hope initiative, we nourish underprivileged children so
+        they can learn, grow, and dream. Together, let’s give them not just a
+        meal, but a chance to achieve something extraordinary.
       </h3>
     </div>
   );
