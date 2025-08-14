@@ -345,10 +345,10 @@ export default function Home() {
                     width={450}
                     height={400}
                     priority
-                    className="overflow-hidden h-[400px] w-[600px]   rounded-[18px]"
+                    className="overflow-hidden h-[400px] w-[600px]  rounded-[18px]"
                   />
                 </div>
-                <div className="flex-shrink-0 py-7">
+                <div className="flex-shrink-0 py-7 -ml-10">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
                       videoId="nqvR6NZ9bzo"
