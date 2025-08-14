@@ -345,7 +345,7 @@ export default function Home() {
                     width={450}
                     height={400}
                     priority
-                    className="overflow-hidden h-[400px]   rounded-[18px]"
+                    className="overflow-hidden h-[400px] w-[600px]   rounded-[18px]"
                   />
                 </div>
                 <div className="flex-shrink-0 py-7">
@@ -390,7 +390,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="w-[400px] py-7">
+                <div className="w-[450px] py-7">
                   <strong className="bold-text  text-2xl text-white  ">
                     1 SHARE = 1 MEAL
                   </strong>
