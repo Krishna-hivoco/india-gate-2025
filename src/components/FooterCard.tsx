@@ -34,9 +34,10 @@ function FooterCard() {
           height={50}
           className="w-11 h-11 md:w-[50px] md:h-[50px] "
         />
-        <div className="flex flex-col ">
-          <h3 className=" bold-text text-xl md:text-3xl ">The Gap Between</h3>
-          <h2 className=" bold-text text-3xl md:text-4xl -mt-1.5 ">
+        <div className="flex flex-col md:flex-row ">
+          <h3 className=" bold-text text-xl md:text-4xl ">The Gap Between</h3>
+          <small className="md:block hidden">&nbsp;</small>
+          <h2 className=" bold-text text-3xl md:text-4xl -mt-1.5 md:mt-0 ">
             Hunger & Hope
           </h2>
         </div>

@@ -9,8 +9,8 @@ function Footer() {
   const icon = [
     { icon: "linkdin", link: "https://www.linkedin.com/company/krbl-limited" },
     { icon: "facebook", link: "https://www.facebook.com/indiagatefoods" },
-    { icon: "insta", link: "https://x.com/IndiaGateFoods" },
-    { icon: "x", link: "https://www.youtube.com/c/IndiaGateFoods" },
+    { icon: "insta", link: "https://www.instagram.com/indiagatefoods/" },
+    { icon: "x", link: "https://x.com/IndiaGateFoods" },
     { icon: "youtube", link: "https://www.youtube.com/c/IndiaGateFoods" },
   ];
   return (
