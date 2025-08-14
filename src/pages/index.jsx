@@ -390,7 +390,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="w-48 py-10">
+                <div className="w-[263px] py-10">
                   <strong className="bold-text  text-2xl text-white  ">
                     1 SHARE = 1 MEAL
                   </strong>
