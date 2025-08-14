@@ -75,7 +75,7 @@ function Header() {
           )}
         </div>
       </div>
-      <div className=" flex flex-col  items-center  -mt-5 md:-mt-14">
+      <div className=" flex flex-col  items-center  -mt-5 md:-mt-16">
         <div className="flex">
           {" "}
           <Image
@@ -90,7 +90,7 @@ function Header() {
             alt={`India Gate logo`}
             width={85}
             height={85}
-            className=" cursor-pointer md:w-28 md:h-28 "
+            className=" cursor-pointer md:w-32 md:h-32 "
           />
         </div>
         <p className="regular-text text-xs md:text-base md:hidden block">
