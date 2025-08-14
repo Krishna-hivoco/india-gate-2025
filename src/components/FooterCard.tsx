@@ -26,18 +26,18 @@ function FooterCard() {
   return (
     <div className="px-4 md:px-16 py-11">
       {/* Header */}
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center ">
         <Image
           src={`/footer/analytics.svg`}
           alt="analytics icon"
           width={50}
           height={50}
-          className="w-11 h-11 md:w-[50px] md:h-[50px] "
+          className="w-11 h-11 md:w-9 md:h-9 "
         />
-        <div className="flex flex-col md:flex-row ">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center ">
           <h3 className=" bold-text text-xl md:text-4xl ">The Gap Between</h3>
           <small className="md:block hidden">&nbsp;</small>
-          <h2 className=" bold-text text-3xl md:text-4xl -mt-1.5 md:mt-0 ">
+          <h2 className=" bold-text text-3xl md:text-4xl -mt-1.5 md:mt-0  ">
             Hunger & Hope
           </h2>
         </div>
