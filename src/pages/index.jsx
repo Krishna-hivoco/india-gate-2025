@@ -172,8 +172,8 @@ export default function Home() {
   };
 
   const desktopOpts = {
-    height: "350",
-    width: "650",
+    height: "330",
+    width: "550",
     playerVars: {
       autoplay: 0,
       controls: 1,
@@ -390,7 +390,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="w-[450px] py-7">
+                <div className="w-[550px] py-7">
                   <strong className="bold-text  text-2xl text-white  ">
                     1 SHARE = 1 MEAL
                   </strong>
