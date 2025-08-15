@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
           {/* Desktop Menu */}
           <div className="hidden lg:flex gap-16 items-center">
             {menu.map((item, id) => (
-              <span
+             item !="FILM" && <span
                 onClick={() => handleMenuClick(item)} // ✅ Clean click handler
                 key={id}
                 className="cursor-pointer hover:text-red-600 font-medium"

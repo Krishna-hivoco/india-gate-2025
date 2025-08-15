@@ -217,7 +217,8 @@ export default function Home() {
 
   const playVideo = async () => {
     // playerRef?.current?.props?.onPlay();
-     playerRef.current.internalPlayer.playVideo();
+    if (!playerRef.current) return;
+    playerRef.current.internalPlayer.playVideo();
   };
 
   return (
