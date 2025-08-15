@@ -289,7 +289,7 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
-                      videoId="JWneVlLhRfE"
+                      videoId="E6nKlNYRv5o"
                       opts={desktopOpts}
                       onPlay={handleVideoPlay}
                       onPause={(event) => console.log("Video paused")}
@@ -351,7 +351,7 @@ export default function Home() {
                 <div className="flex-shrink-0 py-7 -ml-8">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
-                      videoId="JWneVlLhRfE"
+                      videoId="E6nKlNYRv5o"
                       opts={desktopOpts}
                       onPlay={handleVideoPlay}
                       onPause={(event) => console.log("Video paused")}
@@ -482,7 +482,7 @@ export default function Home() {
                   >
                     <div className="absolute inset-0">
                       <YouTube
-                        videoId="JWneVlLhRfE"
+                        videoId="E6nKlNYRv5o"
                         opts={mobileOpts}
                         onPlay={handleVideoPlay}
                         onPause={(event) => console.log("Video paused")}
