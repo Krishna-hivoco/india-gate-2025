@@ -1,10 +1,45 @@
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 
-function Header() {
+interface HeaderProps {
+  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
+  sectionRefs: {
+    aboutRef: React.RefObject<HTMLElement>;
+    impactRef: React.RefObject<HTMLElement>;
+  };
+  handleVideoPlay: () => void; // ✅ Fixed type
+  handleShare: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({
+  scrollToSection,
+  sectionRefs,
+  handleVideoPlay,
+  handleShare,
+}) => {
   const menu = ["ABOUT", "FILM", "IMPACT", "SHARE"];
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const menuRef = useRef<HTMLDivElement | null>(null); // ✅ type added
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  // Handle menu item clicks
+  const handleMenuClick = (item: string) => {
+    switch (item) {
+      case "ABOUT":
+        scrollToSection(sectionRefs?.aboutRef);
+        break;
+      case "FILM":
+        handleVideoPlay();
+        break;
+      case "IMPACT":
+        scrollToSection(sectionRefs?.impactRef);
+        break;
+      case "SHARE":
+        handleShare();
+        break;
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -27,7 +62,6 @@ function Header() {
   return (
     <div className=" text-2xl  px-4 lg:px-16 py-4 pb-4 md:py-6  regular-text">
       {/* Logo */}
-
       <div className=" flex md:justify-between justify-end -mt-3">
         <Image
           src={`/common/india.png`}
@@ -41,6 +75,7 @@ function Header() {
           <div className="hidden lg:flex gap-16 items-center">
             {menu.map((item, id) => (
               <span
+                onClick={() => handleMenuClick(item)} // ✅ Clean click handler
                 key={id}
                 className="cursor-pointer hover:text-red-600 font-medium"
               >
@@ -65,7 +100,10 @@ function Header() {
               {menu.map((item, id) => (
                 <span
                   key={id}
-                  onClick={() => setShowMobileMenu(false)}
+                  onClick={() => {
+                    handleMenuClick(item); // ✅ Use same handler
+                    setShowMobileMenu(false);
+                  }}
                   className="cursor-pointer hover:text-red-600 font-medium"
                 >
                   {item}
@@ -75,9 +113,9 @@ function Header() {
           )}
         </div>
       </div>
+
       <div className=" flex flex-col  items-center  -mt-5 md:-mt-16">
         <div className="flex">
-          {" "}
           <Image
             src={`/common/india.png`}
             alt={`India Gate logo`}
@@ -99,6 +137,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

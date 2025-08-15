@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import YouTube from "react-youtube";
-import { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   generateUniqueId,
   getMainStats,
@@ -195,6 +195,31 @@ export default function Home() {
     },
   };
 
+  function useScrollToSection() {
+    const scrollToSection = (ref) => {
+      ref.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    };
+
+    return scrollToSection;
+  }
+
+  const scrollToSection = useScrollToSection();
+  const aboutRef = useRef(null);
+  const impactRef = useRef(null);
+  const playerRef = useRef();
+  const sectionRefs = {
+    aboutRef: aboutRef,
+    impactRef: impactRef,
+  };
+
+  const playVideo = async () => {
+    // playerRef?.current?.props?.onPlay();
+     playerRef.current.internalPlayer.playVideo();
+  };
+
   return (
     <div className=" bg-[url('/common/mobilebg.png')] md:bg-[url('/common/bg.png')] bg-[rgba(255,247,226,0.78)] bg-no-repeat bg-cover">
       {/* Loading Popup */}
@@ -257,10 +282,15 @@ export default function Home() {
       >
         <div className="h-full flex flex-col">
           <header className="flex-shrink-0">
-            <Header />
+            <Header
+              scrollToSection={scrollToSection}
+              sectionRefs={sectionRefs}
+              handleVideoPlay={playVideo}
+              handleShare={handleShare}
+            />
           </header>
 
-          <section className="flex-1  ">
+          <section ref={aboutRef} className="flex-1  ">
             {/* <div className="hidden lg:block">
               
               <div className="container mx-auto h-full gap-6 flex items-center justify-between px-16  ">
@@ -351,6 +381,7 @@ export default function Home() {
                 <div className="flex-shrink-0 py-7 -ml-8">
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <YouTube
+                      ref={playerRef}
                       videoId="E6nKlNYRv5o"
                       opts={desktopOpts}
                       onPlay={handleVideoPlay}
@@ -381,7 +412,7 @@ export default function Home() {
                           {" "}
                           {mainStats?.share_count
                             ? mainStats?.share_count
-                            : 123405}
+                            : 12405}
                         </strong>
                         <span className="text-xs regular-text">
                           Shares & counting
@@ -407,7 +438,10 @@ export default function Home() {
             </div>
 
             {/* Mobile Layout */}
-            <div className="lg:hidden mx-auto h-full flex flex-col container  px-4   gap-4">
+            <div
+              ref={aboutRef}
+              className="lg:hidden mx-auto h-full flex flex-col container  px-4   gap-4"
+            >
               {/* Top row - AB image and text content */}
               <div className="flex  gap-[2px] items-center   bg-[#682E21] rounded-[18px] pt-3 pr-4 ">
                 <div className="flex-shrink-0 overflow-hidden ">
@@ -482,6 +516,7 @@ export default function Home() {
                   >
                     <div className="absolute inset-0">
                       <YouTube
+                        ref={playerRef}
                         videoId="E6nKlNYRv5o"
                         opts={mobileOpts}
                         onPlay={handleVideoPlay}
@@ -632,7 +667,7 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto">
-          <footer>
+          <footer ref={impactRef}>
             <FooterCard />
             <FooterTop />
             <Footer />
