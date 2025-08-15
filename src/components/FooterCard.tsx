@@ -14,7 +14,7 @@ function FooterCard() {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // 600ms interval
+    }, 6000); // 600ms interval
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);

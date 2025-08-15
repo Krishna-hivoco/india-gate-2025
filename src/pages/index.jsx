@@ -31,7 +31,7 @@ export default function Home() {
         setIsLoading(false);
       }, 1000);
     };
-    handleLoad()
+    handleLoad();
 
     // Check if page is already loaded
     // if (document.readyState === "complete") {
@@ -105,7 +105,7 @@ export default function Home() {
 
     const shareData = {
       title: "#FreedomFromHunger - 1 Share = 1 Meal",
-      text: "Through GrainsOfHope initiative, every share of this video provides a meal to a child in need. Be the reason a child enjoys a full meal today.",
+      text: "Thank you for sharing our Grains of Hope campaign video. Your support has helped provide a meal to a child in need, bringing us one step closer to #FreedomFromHunger. Together, we’re turning awareness into action, and making a real difference.",
       url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
     };
 
@@ -138,7 +138,7 @@ export default function Home() {
     // Create shareData with the actual share_id
     const shareData = {
       title: "#FreedomFromHunger - 1 Share = 1 Meal",
-      text: "Through #FreedomFromHunger, Share this initiative and let's put a full plate of food in front of a child who needs it.",
+      text: "Thank you for sharing our Grains of Hope campaign video. Your support has helped provide a meal to a child in need, bringing us one step closer to #FreedomFromHunger. Together, we’re turning awareness into action, and making a real difference.",
       url: `https://indiagategrainsofhope.com/?share_id=${actualShareId}`,
     };
 
