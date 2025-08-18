@@ -277,7 +277,7 @@ export default function Home() {
 
       {/* Main content section - exactly screen height */}
       <div
-        className={` md:h-screen  transition-opacity duration-500 ${
+        className={`   transition-opacity duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
