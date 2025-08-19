@@ -80,6 +80,14 @@ export default function Home() {
       setdevice_id(storedId);
       console.log("Existing device_id found:", storedId);
     }
+
+    if (typeof window !== "undefined") {
+      window.gtag("event", "Site_visit", {
+        event_category: "engagement",
+        event_label: "site_navigation",
+        value: 1,
+      });
+    }
   }, []);
 
   const handleVideoPlay = async () => {
@@ -92,6 +100,11 @@ export default function Home() {
     }
     if (typeof window !== "undefined") {
       window.gtag_report_conversion();
+      window.gtag("event", "Shares_button", {
+        event_category: "social",
+        event_label: "content_share",
+        value: 1,
+      });
     }
     // Generate share ID first
     const info = await insertSchoolShare(device_id, share_id);
@@ -413,7 +426,7 @@ export default function Home() {
                           {" "}
                           {mainStats?.share_count
                             ? mainStats?.share_count
-                            : 27446}
+                            : 29436}
                         </strong>
                         <span className="text-xs regular-text">
                           Shares & counting
@@ -499,7 +512,7 @@ export default function Home() {
                   >
                     <strong className=" text-3xl">
                       {" "}
-                      {mainStats?.share_count ? mainStats?.share_count : 27446}
+                      {mainStats?.share_count ? mainStats?.share_count : 29436}
                     </strong>
                     <span className="text-xs regular-text">
                       Shares & counting
