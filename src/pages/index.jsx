@@ -413,7 +413,7 @@ export default function Home() {
                           {" "}
                           {mainStats?.share_count
                             ? mainStats?.share_count
-                            : 25446}
+                            : 27446}
                         </strong>
                         <span className="text-xs regular-text">
                           Shares & counting
@@ -499,7 +499,7 @@ export default function Home() {
                   >
                     <strong className=" text-3xl">
                       {" "}
-                      {mainStats?.share_count ? mainStats?.share_count : 25446}
+                      {mainStats?.share_count ? mainStats?.share_count : 27446}
                     </strong>
                     <span className="text-xs regular-text">
                       Shares & counting
