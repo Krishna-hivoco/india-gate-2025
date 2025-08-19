@@ -56,14 +56,14 @@ export default function Home() {
     fetchStats();
 
     // Fetch every 2 minutes
-    const intervalId = setInterval(fetchStats, 2 * 60 * 1000);
+    // const intervalId = setInterval(fetchStats, 2 * 60 * 1000);
 
     // Cleanup on unmount
-    return () => {
-      isMounted = false;
-      clearInterval(intervalId);
-    };
-  }, [infoCurrentShareId]);
+    // return () => {
+    //   isMounted = false;
+    //   clearInterval(intervalId);
+    // };
+  }, []);
 
   useEffect(() => {
     insertUTM(sources);
@@ -413,7 +413,7 @@ export default function Home() {
                           {" "}
                           {mainStats?.share_count
                             ? mainStats?.share_count
-                            : 25605}
+                            : 25446}
                         </strong>
                         <span className="text-xs regular-text">
                           Shares & counting
@@ -499,7 +499,7 @@ export default function Home() {
                   >
                     <strong className=" text-3xl">
                       {" "}
-                      {mainStats?.share_count ? mainStats?.share_count : 123405}
+                      {mainStats?.share_count ? mainStats?.share_count : 25446}
                     </strong>
                     <span className="text-xs regular-text">
                       Shares & counting
