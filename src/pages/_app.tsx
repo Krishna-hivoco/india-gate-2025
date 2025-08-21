@@ -25,12 +25,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>
-          #FreedomFromHunger | India Gate Basmati Rice – 1 Share = 1 Meal for a
-          Child in Need
+          Grains of Hope – India Gate Basmati Rice | #FreedomFromHunger
         </title>
         <meta
           name="description"
-          content="Join India Gate Basmati Rice's #FreedomFromHunger campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
+          content="Join India Gate’s Grains of Hope initiative-watch, Share, and Feed. For every share, India Gate provides one meal to a child in need. Be part of #FreedomFromHunger initiative."
         />
         <meta
           name="keywords"
@@ -46,7 +45,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:description"
-          content="Join India Gate Basmati Rice's #FreedomFromHunger campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
+          content="Join India Gate’s Grains of Hope initiative-watch, Share, and Feed. For every share, India Gate provides one meal to a child in need. Be part of #FreedomFromHunger initiative."
         />
         <meta
           property="og:image"
@@ -70,7 +69,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           name="twitter:description"
-          content="Join India Gate Basmati Rice's #FreedomFromHunger campaign. Every share helps put a full plate of food in front of a child who needs it. 1 Share = 1 Meal."
+          content="Join India Gate’s Grains of Hope initiative-watch, Share, and Feed. For every share, India Gate provides one meal to a child in need. Be part of #FreedomFromHunger initiative."
         />
         <meta
           name="twitter:image"
