@@ -107,13 +107,12 @@ export default function Home() {
       });
     }
     // Generate share ID first
-    const info = await insertSchoolShare(device_id, share_id);
-    console.log("Share info received:", info); // Debug log
-    setinfoCurrentShareId(info);
+    // const info = await insertSchoolShare(device_id, share_id);
+    // console.log("Share info received:", info); // Debug log
+    // setinfoCurrentShareId(info);
 
     // Check if we have a valid share_id
-    const actualShareId =
-      info?.share_id || info?.id || info?.shareId || "default";
+    const actualShareId = "default";
     console.log("Using share_id:", actualShareId); // Debug log
 
     const shareData = {
@@ -135,6 +134,10 @@ export default function Home() {
     } else {
       setShowSharePopup(true);
     }
+   
+    const info = await insertSchoolShare(device_id, share_id);
+    console.log("Share info received:", info); // Debug log
+    setinfoCurrentShareId(info);
   };
 
   const handleSocialShare = async (platform) => {
