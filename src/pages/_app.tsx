@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>
-          #FreedomFromHunger | India Gate Basmati Rice – 1 Share = 1 Meal for a Child
-          in Need
+          #FreedomFromHunger | India Gate Basmati Rice – 1 Share = 1 Meal for a
+          Child in Need
         </title>
         <meta
           name="description"
@@ -59,10 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:image:alt"
           content="GrainsOfHope Campaign - India Gate Basmati Rice"
         />
-        <meta
-          property="og:url"
-          content={"https://indiagategrainsofhope.com"}
-        />
+        <meta property="og:url" content={"https://indiagategrainsofhope.com"} />
         <meta property="og:site_name" content="India Gate Basmati Rice" />
 
         {/* Twitter Card - with full URLs */}
@@ -89,6 +86,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="format-detection" content="telephone=no" />
 
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://indiagategrainsofhope.com" />
       </Head>
       <div className={customFont.variable}>
         <Component {...pageProps} />

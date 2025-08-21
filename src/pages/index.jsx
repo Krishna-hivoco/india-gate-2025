@@ -426,7 +426,7 @@ export default function Home() {
                           {" "}
                           {mainStats?.share_count
                             ? mainStats?.share_count
-                            : 29436}
+                            : 35890}
                         </strong>
                         <span className="text-xs regular-text">
                           Shares & counting
